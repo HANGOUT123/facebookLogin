@@ -80,6 +80,7 @@
         console.log('Successful login for: ' + response.name);
         document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
+        document.getElementById('LoginBtn').data-auto-logout-link = "true";
       });
     }
   </script>
@@ -90,8 +91,9 @@
   the FB.login() function when clicked.
 -->
 
-  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+  <fb:login-button id="LoginBtn" scope="public_profile,email" onlogin="checkLoginState();">
   </fb:login-button>
+
 
   <div id="status">
   </div>
